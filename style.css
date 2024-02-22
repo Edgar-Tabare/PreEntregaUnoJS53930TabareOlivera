@@ -1,0 +1,52 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Asegura que el cuerpo y el HTML ocupen toda la altura del viewport */
+    background-image: linear-gradient(to bottom right, #252A34, #3A3F4B); /* Gradiente lineal de color oscuro a color claro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Color de texto blanco para contrastar con el gradiente */
+}
+
+h1 {
+    margin: 0;
+    font-size: 10vh;
+}
+
+h2 {
+    font-size: 3vh;
+}
+
+h2 img {
+    width: 200px; /* ajusta el valor según sea necesario */
+    height: auto; /* esto mantendrá la proporción original de la imagen */
+    border-radius: 50%; /* esto hará que la imagen tenga forma circular */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Agrega una sombra a la imagen */
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-text {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.animate-text span {
+    display: inline-block;
+    opacity: 0;
+    animation: appear 0.5s forwards;
+    animation-delay: calc(var(--index) * 0.1s);
+}
